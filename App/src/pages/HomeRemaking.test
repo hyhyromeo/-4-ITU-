@@ -1,0 +1,96 @@
+// import {
+//     IonContent,
+//     IonHeader,
+//     IonPage,
+//     IonToolbar,
+//     IonIcon,
+//     IonGrid,
+//     IonRow,
+//     IonCol,
+//     IonAvatar,
+//     IonBadge,
+//     IonCardContent,
+//     IonCardTitle,
+//     IonCardHeader,
+//     IonCard,
+//   } from "@ionic/react";
+//   import React from "react";
+//   import "./Home.scss";
+//   import inbox from "../assets/icons/inbox.svg";
+  
+//   import CardCategories from "../components/card-categories";
+//   import { useSelector } from "react-redux";
+//   import { Route, useHistory } from "react-router";
+//   import Tab from "../components/Tab";
+  
+//   const Home: React.FC = () => {
+//     // const data = useSelector((state: any) => state.reviewReducers.data);
+//     // const cardInf = useSelector((state: any) => state.reviewReducers.cardInf);
+//     const history = useHistory();
+  
+//     return (
+//       <IonPage>
+//         <IonHeader>
+//           <IonToolbar>
+//             <IonGrid>
+//               <IonRow>
+//                 <IonCol className="flex-container">
+//                   <div className="left-side">
+//                     <span>Good Morning,</span>
+//                     <h5>Alex!</h5>
+//                   </div>
+//                   <div className="right-side">
+//                     <div className="inbox-icon" onClick={() => history.push("/myappointments")}>
+//                       <IonIcon src={inbox}></IonIcon>
+//                       <IonBadge>1</IonBadge>
+//                     </div>
+//                     <IonAvatar onClick={() => history.push("/settings")}>
+//                       <img
+//                         src="https://tecky.io/static/5d3fe7bec531cDI8A4077-7703e771e319f3bd8d6fc4c5156f08e9.JPG"
+//                         alt="test"
+//                       />
+//                     </IonAvatar>
+//                   </div>
+//                 </IonCol>
+//               </IonRow>
+//             </IonGrid>
+//           </IonToolbar>
+//         </IonHeader>
+//         <IonContent>
+//           <IonGrid>
+//             <IonRow>
+//               <IonCol className="profile-title">
+//                 <h5>Latest News</h5>
+//               </IonCol>
+//             </IonRow>
+//             {/* <IonRow>
+//               {data.map((item: any) => {
+//                 return (
+//                   <IonCol key={item.id}>
+//                     <CardCategories {...item} />
+//                   </IonCol>
+//                 );
+//               })}
+//             </IonRow> */}
+  
+//             {/* TODO::Now Hard Code, wanna using state to load data */}
+//             <IonCard>
+//               <img src="/assets/madison.jpg" />
+//               <IonCardHeader>
+//                 <IonCardTitle>Hong Kong</IonCardTitle>
+//               </IonCardHeader>
+//               <IonCardContent>
+//                 Hong Kong residents should be allowed to choose which Covid-19 vaccine they take.
+//               </IonCardContent>
+//             </IonCard>
+//             {/* TODO::Now Hard Code, wanna using state to load data */}
+//           </IonGrid>
+//         </IonContent>
+//         <Tab />
+//       </IonPage>
+//     );
+//   };
+  
+//   export default Home;
+export {}
+  

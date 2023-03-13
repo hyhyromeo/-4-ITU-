@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+    Server:
+        env_file:
+          - ./.env.docker
+        environment: 
+            PROD_POSTGRES_HOST: postgres
+            PORT: 1359
+        depends_on:
+            - postgres
+        build:
+            context: ./
+            dockerfile: ./Dockerfile
+        image: "server:latest"
+        ports:
+            - "9100:1359"
+        volumes:
+            - ../server-data:/usr/src/app/Server/data
+    postgres:
+        image: "postgres:13"
+        env_file:
+          - ./.env.docker
+        ports:
+            - "8432:5432"
+        volumes:
+            - ../pgdata:/var/lib/postgresql/data

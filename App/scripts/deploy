@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+set -x
+pnpm install --prefer-offline
+REACT_APP_API_SERVER=https://api.teckyc14.online npm run build
+aws s3 sync build s3://finalcmsproject-bucket
+aws cloudfront create-invalidation --distribution-id E2TH91XXLOB62D --paths '/*'

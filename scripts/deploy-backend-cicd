@@ -1,0 +1,27 @@
+#!/bin/bash
+set -e
+set -x
+
+## build docker image
+docker build -t "server:latest" .
+
+## upload docker image
+docker save server:latest \
+  | gzip \
+  | ssh "$SERVER_USER@$SERVER_HOST" "gunzip | docker load"
+
+## upload docker compose configurations
+  scp -rv \
+  docker-compose.yml \
+  Dockerfile \
+  .dockerignore \
+  "$SERVER_USER@$SERVER_HOST":~/finalcmsproject-project/
+
+## restart docker services (to latest version)
+ssh "$SERVER_USER@$SERVER_HOST" "
+set -e;
+set -x;
+cd finalcmsproject-project;
+docker-compose up -d;
+echo done.
+"

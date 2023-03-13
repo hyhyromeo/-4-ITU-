@@ -1,0 +1,47 @@
+
+.buttons {
+  background-color: "red";
+  border-radius: "100%";
+  color: "white";
+  width: 32;
+}
+
+.ion-text-end {
+  padding-right: 15px;
+}
+
+ion-content {
+  max-width: 1000px !important;
+  align-self: center;
+}
+
+ion-card {
+  border-radius: 3%;
+}
+
+.couponCard {
+  background: no-repeat;
+  // background-image: url('../assets/logo.png');
+  background-position: center;
+  background-color: honeydew;
+  background-size: auto;
+}
+
+.medicalServiceCardHeader {
+    padding: 1em;
+}
+
+.medicalServiceCardTitle {
+  color: black;
+}
+
+.medicalServiceCardSubtitle {
+  text-align: end;
+  margin-top: 6em;
+  margin-right: 1em;
+  color: black;
+}
+
+.adminControlButton{
+    margin: 0px;
+}

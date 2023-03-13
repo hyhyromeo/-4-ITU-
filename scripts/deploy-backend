@@ -1,0 +1,30 @@
+#!/bin/bash
+set -e
+set -x
+
+## build docker image
+read -p 'version: ' version
+docker build -t "server:$version" .
+docker tag "server:$version" server:latest
+
+## upload docker image
+docker save server:latest \
+  | gzip \
+  | ssh finalcmsproject "gunzip | docker load"
+
+## upload docker compose configurations
+  scp -rv \
+  docker-compose.yml \
+  Dockerfile \
+  .dockerignore \
+  finalcmsproject:~/finalcmsproject-project/
+
+## restart docker services (to latest version)
+ssh finalcmsproject "
+set -e;
+set -x;
+cd finalcmsproject-project;
+docker-compose down;
+docker-compose up -d;
+echo done.
+"
